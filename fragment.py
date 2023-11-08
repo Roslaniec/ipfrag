@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # suppress scapy warnings
 import logging
@@ -27,7 +27,7 @@ def main():
         p = Ether(pkt_data[0])
         if isinstance(p[1], IP) and len(p[2]) > args.fragment_size and p[1].flags & 2 != 0:
             p = fragment(p, args.fragment_size)
-            print 'Fragmented packet into {} fragments.'.format(len(p))
+            print('Fragmented packet into {} fragments.'.format(len(p)))
 
         writer.write(p)
 

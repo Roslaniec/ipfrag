@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # suppress scapy warnings
 import logging
@@ -38,7 +38,7 @@ def main():
                 defragged.append(f)
         fragments = [f for f in fragments if f not in defragged]
         for df in defragged:
-            print 'Defragmented packet.'
+            print('Defragmented packet.')
             writer.write(df)
 
 if __name__ == '__main__':
